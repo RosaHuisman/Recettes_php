@@ -16,18 +16,24 @@
 
     <?php include_once('header.php'); ?>
         <h1>Contactez nous</h1>
-        <form>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" aria-describedby="email-help">
-                <div id="email-help" class="form-text">Nous ne revendrons pas votre email.</div>
+        <form action="submit_contact.php" method="POST" enctype="multipart/form-data">
+        <!-- Ajout des champs email et message -->
+        <div>
+                <label for="email">Email</label>
+                <input type="email" name="email">
             </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Votre message</label>
-                <textarea class="form-control" placeholder="Exprimez vous" id="message" name="textarea"></textarea>
+            <div>
+                <label for="message">Votre message</label>
+                <textarea placeholder="Exprimez vous" name="message"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Envoyer</button>
-        </form>
+        <!-- Ajout champ d'upload ! -->
+        <div class="mb-3">
+            <label for="screenshot" class="form-label">Votre capture d'écran</label>
+            <input type="file" class="form-control" id="screenshot" name="screenshot" />
+        </div>
+        <!-- Fin ajout du champ -->
+        <button type="submit" class="btn btn-primary">Envoyer</button>
+    </form>
         <br />
     </div>
 
